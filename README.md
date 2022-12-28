@@ -1,6 +1,5 @@
 # Lottery
 
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -23,7 +22,6 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-
 ## Chainlink Automation
 
 In a Chainlink oracle contract, the checkUpkeep and performUpkeep functions are used to manage the maintenance and upkeep of the oracle.
@@ -36,8 +34,12 @@ In general, the checkUpkeep function is responsible for deciding when maintenanc
 
 By regularly checking and performing the necessary maintenance tasks, these functions help ensure that the oracle contract remains operational and able to provide accurate data to its clients.
 
-
 https://docs.chain.link/vrf/v2/subscription
 
-
 0x96cFfb77D940bFCA38dD35E210BEFfE6556d71dC
+
+## others
+
+we will connect our dapp to a wallet using react-moralis
+
+npm add moralis react-moralis
