@@ -38,8 +38,16 @@ https://docs.chain.link/vrf/v2/subscription
 
 0x96cFfb77D940bFCA38dD35E210BEFfE6556d71dC
 
+
+## web3uikit
+
+The header shows a connectButton that allows the user to connect to our dApp.  
+The "Header" function is a very simple function that returns a div element containing a single element, which is the "ConnectButton" component imported from the "web3uikit" library.  
+The "ConnectButton" component is a UI element that allows users to connect to an Ethereum wallet or sign transactions using a variety of different methods. The "moralisAuth" prop is a boolean that determines whether the "ConnectButton" should use the Moralis authentication service to sign transactions.
 ## others
 
 we will connect our dapp to a wallet using react-moralis
 
 npm add moralis react-moralis
+
+npm add web3uikit
