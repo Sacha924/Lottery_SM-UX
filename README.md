@@ -56,3 +56,9 @@ we will connect our dapp to a wallet using react-moralis
 npm add moralis react-moralis
 
 npm add web3uikit
+
+npm add --dev tailwindcss postcss autoprefixer
+
+npx tailwindcss init -p
+
+https://tailwindcss.com/docs/installation
