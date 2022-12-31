@@ -1,0 +1,387 @@
+{
+  "compiler": {
+    "version": "0.8.7+commit.e28d00a7"
+  },
+  "language": "Solidity",
+  "output": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "vrfCoordinatorV2",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "subscriptionId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "gasLane",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "interval",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "entranceFee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "callbackGasLimit",
+            "type": "uint32"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "have",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "want",
+            "type": "address"
+          }
+        ],
+        "name": "OnlyCoordinatorCanFulfill",
+        "type": "error"
+      },
+      {
+        "inputs": [],
+        "name": "Raffle__RaffleNotOpen",
+        "type": "error"
+      },
+      {
+        "inputs": [],
+        "name": "Raffle__SendMoreToEnterRaffle",
+        "type": "error"
+      },
+      {
+        "inputs": [],
+        "name": "Raffle__TransferFailed",
+        "type": "error"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "currentBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "numPlayers",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "raffleState",
+            "type": "uint256"
+          }
+        ],
+        "name": "Raffle__UpkeepNotNeeded",
+        "type": "error"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "player",
+            "type": "address"
+          }
+        ],
+        "name": "RaffleEnter",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "uint256",
+            "name": "requestId",
+            "type": "uint256"
+          }
+        ],
+        "name": "RequestedRaffleWinner",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "player",
+            "type": "address"
+          }
+        ],
+        "name": "WinnerPicked",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes",
+            "name": "",
+            "type": "bytes"
+          }
+        ],
+        "name": "checkUpkeep",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "upkeepNeeded",
+            "type": "bool"
+          },
+          {
+            "internalType": "bytes",
+            "name": "",
+            "type": "bytes"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "enterRaffle",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getEntranceFee",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getInterval",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getLastTimeStamp",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getNumWords",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getNumberOfPlayers",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "index",
+            "type": "uint256"
+          }
+        ],
+        "name": "getPlayer",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getRaffleState",
+        "outputs": [
+          {
+            "internalType": "enum Raffle.RaffleState",
+            "name": "",
+            "type": "uint8"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getRecentWinner",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getRequestConfirmations",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes",
+            "name": "",
+            "type": "bytes"
+          }
+        ],
+        "name": "performUpkeep",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "requestId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "randomWords",
+            "type": "uint256[]"
+          }
+        ],
+        "name": "rawFulfillRandomWords",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ],
+    "devdoc": {
+      "details": "This implements the Chainlink VRF Version 2",
+      "kind": "dev",
+      "methods": {
+        "checkUpkeep(bytes)": {
+          "details": "This is the function that the Chainlink Keeper nodes call they look for `upkeepNeeded` to return True. the following should be true for this to return true: 1. The time interval has passed between raffle runs. 2. The lottery is open. 3. The contract has ETH. 4. Implicity, your subscription is funded with LINK."
+        },
+        "performUpkeep(bytes)": {
+          "details": "Once `checkUpkeep` is returning `true`, this function is called and it kicks off a Chainlink VRF call to get a random winner."
+        }
+      },
+      "title": "A sample Raffle Contract",
+      "version": 1
+    },
+    "userdoc": {
+      "kind": "user",
+      "methods": {
+        "constructor": {
+          "notice": "vrfCoordinatorV2: the address of the VRF coordinator contract, which is a contract that implements the VRFProvider interface. subscriptionId: a uint64 representing the subscription ID for this contract. gasLane: a bytes32 value representing the gas lane for this contract. interval: a uint256 value representing the interval at which the contract should run. entranceFee: a uint256 value representing the entrance fee for this contract. callbackGasLimit: a uint32 value representing the gas limit for the contract's callbacks."
+        },
+        "getRaffleState()": {
+          "notice": "Getter Functions "
+        }
+      },
+      "notice": "This contract is for creating a sample raffle contract",
+      "version": 1
+    }
+  },
+  "settings": {
+    "compilationTarget": {
+      "lottery.sol": "Raffle"
+    },
+    "evmVersion": "london",
+    "libraries": {},
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "remappings": []
+  },
+  "sources": {
+    "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol": {
+      "keccak256": "0x3d709a5e0f1f9b8841172b10ba8af785dd51a13eda9fc395723a706e51329904",
+      "license": "MIT",
+      "urls": ["bzz-raw://038eef992d813c20737fbe94e3a36e5d541d1aa736158dd2a43dd5b840b8c360", "dweb:/ipfs/QmZWJ25Yr1sUSAsfJRKvTMDmGkmy63hHhB495CUL1bpNz4"]
+    },
+    "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol": {
+      "keccak256": "0x67076747c6f66d8d43472a56e72879c350056bff82e069addaf9064922863340",
+      "license": "MIT",
+      "urls": ["bzz-raw://b738dba680a6fbc4afc85819743f13f5b7f4790ec8634c9894e1160327b11b6e", "dweb:/ipfs/Qmbv3euvQppeBm2g61khcJSRMZWi78xUWzbnjKAvDBnka4"]
+    },
+    "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol": {
+      "keccak256": "0x54cdc97717cbae1a51a5500c8ee4875ebf056c95b54d2155a9544a79cb4f4494",
+      "license": "MIT",
+      "urls": ["bzz-raw://4bd670a55aacc0ab372835cd7e21b487f9fb69d8c6375234b68862a58f3b1153", "dweb:/ipfs/QmRMdB9TFLgG1LXg9VSTWbZZ1yf3uY1RY3pPkoMN23JfZk"]
+    },
+    "lottery.sol": {
+      "keccak256": "0x89f05d42fcc5f983b38b4a7bbc2fca620915ec6cf64c968e6d07add50c97430f",
+      "license": "MIT",
+      "urls": ["bzz-raw://0ca3d665c4ec87b3c74e2b393e40def4fd12e6dc83befb18bc1033d917b70f19", "dweb:/ipfs/QmeYRX4WiGU69XxSyqXyAvEvd9pBFDzGJPNhvATUjJC2Vc"]
+    }
+  },
+  "version": 1
+}

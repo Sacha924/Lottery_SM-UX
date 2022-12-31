@@ -22,6 +22,11 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## before you go in depth
+
+This project was done in order to develop my skills on solidity/next as well as the use of the web3uikit library.
+Please note that the lottery is no longer available. I mean that the contract is no longer automatically executed to select a winner, but you can do it yourself by deploying the contract and using chainlink keeper (see below)
+
 ## Chainlink Automation
 
 In a Chainlink oracle contract, the checkUpkeep and performUpkeep functions are used to manage the maintenance and upkeep of the oracle.
@@ -38,12 +43,12 @@ https://docs.chain.link/vrf/v2/subscription
 
 0x96cFfb77D940bFCA38dD35E210BEFfE6556d71dC
 
-
 ## web3uikit
 
 The header shows a connectButton that allows the user to connect to our dApp.  
 The "Header" function is a very simple function that returns a div element containing a single element, which is the "ConnectButton" component imported from the "web3uikit" library.  
 The "ConnectButton" component is a UI element that allows users to connect to an Ethereum wallet or sign transactions using a variety of different methods. The "moralisAuth" prop is a boolean that determines whether the "ConnectButton" should use the Moralis authentication service to sign transactions.
+
 ## others
 
 we will connect our dapp to a wallet using react-moralis
